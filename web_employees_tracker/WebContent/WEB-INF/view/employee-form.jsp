@@ -28,6 +28,10 @@
 			
 			<form:form action="saveEmployee" modelAttribute="employee" method="POST" >
 			
+			
+			<form:hidden path="empid" />
+			
+			
 				<table>
 					<tbody>
 						<tr>

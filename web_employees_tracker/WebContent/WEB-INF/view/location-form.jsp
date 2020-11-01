@@ -28,6 +28,10 @@
 			
 			<form:form action="saveLocation" modelAttribute="location" method="POST" >
 			
+			<!-- need to associate this data with employee id -->
+			
+			<form:hidden path="locid"/>
+			
 				<table>
 					<tbody>
 						<tr>

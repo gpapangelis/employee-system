@@ -47,7 +47,7 @@ public class LocationDAOImpl implements LocationDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		//save the employee
-		currentSession.save(theLocation);
+		currentSession.saveOrUpdate(theLocation);
 		
 	}
 

@@ -28,6 +28,11 @@
 			
 			<form:form action="saveDepartment" modelAttribute="department" method="POST" >
 			
+			
+			<!-- need to associate this data with employee id -->
+			
+			<form:hidden path="deptid"/>
+			
 				<table>
 					<tbody>
 						<tr>

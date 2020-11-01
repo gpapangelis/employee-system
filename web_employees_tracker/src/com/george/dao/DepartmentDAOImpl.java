@@ -48,7 +48,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		//save the employee
-		currentSession.save(theDepartment);
+		currentSession.saveOrUpdate(theDepartment);
 		
 	}
 

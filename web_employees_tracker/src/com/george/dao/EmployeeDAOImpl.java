@@ -67,7 +67,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		//save the employee
-		currentSession.save(theEmployee);
+		currentSession.saveOrUpdate(theEmployee);
 		
 	}
 

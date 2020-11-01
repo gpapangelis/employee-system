@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.george.dao.DepartmentDAO;
 import com.george.entity.Department;
+import com.george.entity.Location;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
@@ -37,7 +38,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 	@Override
 	@Transactional
 	public Department getDepartment(int theId) {
-		// TODO Auto-generated method stub
+		
 		return departmentDAO.getDepartment(theId);
 	}
 

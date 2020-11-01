@@ -80,4 +80,14 @@ public class DepartmentController {
 		
 	}
 	
+	@GetMapping("/delete")
+	public String deleteDepartment(@RequestParam("departmentId") int theId) {
+		
+		//delete
+		departmentService.deleteDepartment(theId);
+		
+		return "redirect:/department/list";
+		
+	}
+	
 }

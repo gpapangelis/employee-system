@@ -42,4 +42,12 @@ public class DepartmentServiceImpl implements DepartmentService {
 		return departmentDAO.getDepartment(theId);
 	}
 
+
+	@Override
+	public void deleteDepartment(int theId) {
+
+		departmentDAO.deleteDepartment(theId);
+		
+	}
+
 }

@@ -41,4 +41,12 @@ public class LocationServiceImpl implements LocationService {
 		return locationDAO.getLocation(theId);
 	}
 
+
+	@Override
+	public void deleteLocation(int theId) {
+		
+		locationDAO.deleteLocation(theId);
+		
+	}
+
 }

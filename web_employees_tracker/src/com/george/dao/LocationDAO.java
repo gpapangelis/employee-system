@@ -12,5 +12,7 @@ public interface LocationDAO {
 
 	public Location getLocation(int theId);
 
+	public void deleteLocation(int theId);
+
 	
 }

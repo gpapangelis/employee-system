@@ -53,7 +53,12 @@
 				
 				<!-- construct an update link with employee id -->
 				<c:url var="updateLink" value="/department/showFormForUpdate">
-					<c:param name="departmentId" value="${tempEmployee.deptid}" />
+					<c:param name="departmentId" value="${tempDepartment.deptid}" />
+				</c:url>
+				
+				<!-- construct an delete link with employee id -->
+				<c:url var="deleteLink" value="/department/delete">
+					<c:param name="departmentId" value="${tempDepartment.deptid}" />
 				</c:url>
 				
 					<tr>
@@ -65,6 +70,9 @@
 							<!-- display the update link -->
 							
 						<a href="${updateLink}">Update</a>
+						|
+						<a href="${deleteLink}"
+							onclick="if (!(confirm('Are you sure you want to delete this department?'))) return false">Delete</a>
 						</td>
 						
 					</tr>

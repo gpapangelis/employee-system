@@ -63,6 +63,18 @@ public class LocationDAOImpl implements LocationDAO {
 		return theLocation;
 	}
 
+	@Override
+	public void deleteLocation(int theId) {
+				//get session
+				Session currentSession = sessionFactory.getCurrentSession();
+				
+				//delete by id
+				Query theQuery = currentSession.createQuery("delete from Location where id=:locationId");
+				theQuery.setParameter("locationId", theId);
+				theQuery.executeUpdate();
+		
+	}
+
 	//add for search by deptid   (prosoxh sto id)
 	/*@Override
 	public List<Employee> getEmployeesByDep(int deptid) {

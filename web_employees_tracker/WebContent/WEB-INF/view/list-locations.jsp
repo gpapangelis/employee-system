@@ -54,6 +54,11 @@
 					<c:param name="locationId" value="${tempLocation.locid}" />
 				</c:url>
 				
+				<!-- construct an delete link with location id -->
+				<c:url var="deleteLink" value="/location/delete">
+					<c:param name="locationId" value="${tempLocation.locid}" />
+				</c:url>
+				
 					<tr>
 						<td> ${tempLocation.locid} </td>
 						<td> ${tempLocation.locname} </td>
@@ -62,6 +67,9 @@
 							<!-- display the update link -->
 							
 						<a href="${updateLink}">Update</a>
+						|
+						<a href="${deleteLink}"
+							onclick="if (!(confirm('Are you sure you want to delete this location?'))) return false">Delete</a>
 						</td>
 						
 					</tr>

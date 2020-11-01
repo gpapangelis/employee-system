@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.george.entity.Employee;
+import com.george.entity.Location;
 
 @Transactional
 @Repository
@@ -20,7 +21,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public List<Employee> getEmployees() {
 		
 		//get the current hibernate session
@@ -58,6 +58,29 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		//return the results
 		return employees;
 		
+	}
+
+	@Override
+	public void saveEmployee(Employee theEmployee) {
+		
+		//get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//save the employee
+		currentSession.save(theEmployee);
+		
+	}
+
+	@Override
+	public Employee getEmployee(int theId) {
+		
+				// get the current hibernate session
+				Session currentSession = sessionFactory.getCurrentSession();
+				
+				// now retrieve /read from database using the primary key
+				Employee theEmployee = currentSession.get(Employee.class, theId);
+				
+				return theEmployee;
 	}
 
 }

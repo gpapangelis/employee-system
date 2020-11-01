@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.george.entity.Department;
+import com.george.entity.Employee;
+import com.george.entity.Location;
 
 @Transactional
 @Repository
@@ -20,7 +22,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public List<Department> getDepartments() {
 		
 		//get the current hibernate session
@@ -38,6 +39,28 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		return departments;
 		
 		
+	}
+
+	@Override
+	public void saveDepartment(Department theDepartment) {
+		
+		//get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//save the employee
+		currentSession.save(theDepartment);
+		
+	}
+
+	@Override
+	public Department getDepartment(int theId) {
+				// get the current hibernate session
+				Session currentSession = sessionFactory.getCurrentSession();
+				
+				// now retrieve /read from database using the primary key
+				Department theDepartment = currentSession.get(Department.class, theId);
+				
+				return theDepartment;
 	}
 
 	//add for search by deptid   (prosoxh sto id)

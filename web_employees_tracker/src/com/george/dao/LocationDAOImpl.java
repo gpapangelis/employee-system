@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.george.entity.Employee;
 import com.george.entity.Location;
 
 @Transactional
@@ -20,7 +21,6 @@ public class LocationDAOImpl implements LocationDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public List<Location> getLocations() {
 		
 		//get the current hibernate session
@@ -38,6 +38,29 @@ public class LocationDAOImpl implements LocationDAO {
 		return locations;
 		
 		
+	}
+
+	@Override
+	public void saveLocation(Location theLocation) {
+		
+		//get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//save the employee
+		currentSession.save(theLocation);
+		
+	}
+
+	@Override
+	public Location getLocation(int theId) {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// now retrieve /read from database using the primary key
+		Location theLocation = currentSession.get(Location.class, theId);
+		
+		return theLocation;
 	}
 
 	//add for search by deptid   (prosoxh sto id)

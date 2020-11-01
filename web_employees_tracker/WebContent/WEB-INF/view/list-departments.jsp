@@ -28,6 +28,15 @@
 		
 		<div id="content">
 		
+			<!-- put the add button -->
+			
+			<input type="button" value ="Add Department"  
+					onclick="window.location.href='showFormForAdd'; return false;"
+					class="add-button"
+			/>
+		
+		
+		
 			<!-- add html table here -->
 		
 			<table>
@@ -35,16 +44,29 @@
 					<th>Departments ID</th>
 					<th>Department Name</th>
 					<th>Location ID</th>
+					<th>Action</th>
 				</tr>
 				
 				<!-- Loop over and print table -->
 				
 				<c:forEach var="tempDepartment" items="${departments}">
 				
+				<!-- construct an update link with employee id -->
+				<c:url var="updateLink" value="/department/showFormForUpdate">
+					<c:param name="departmentId" value="${tempEmployee.deptid}" />
+				</c:url>
+				
 					<tr>
 						<td> ${tempDepartment.deptid} </td>
 						<td> ${tempDepartment.dname} </td>
 						<td> ${tempDepartment.locid} </td>
+						
+						<td>
+							<!-- display the update link -->
+							
+						<a href="${updateLink}">Update</a>
+						</td>
+						
 					</tr>
 				
 				</c:forEach>

@@ -1,17 +1,14 @@
-package com.george.dao;
+package com.george.service;
 
 import java.util.List;
 
 import com.george.entity.Employee;
 
-public interface EmployeeDAO {
+public interface EmployeeService {
 
 	public List<Employee> getEmployees();
-
-	public List<Employee> getEmployeesByDep(int deptid);
 
 	public void saveEmployee(Employee theEmployee);
 
 	public Employee getEmployee(int theId);
-	
 }

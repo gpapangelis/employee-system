@@ -15,5 +15,7 @@ public interface EmployeeDAO {
 	public Employee getEmployee(int theId);
 
 	public void deleteEmployee(int theId);
+
+	public List<Employee> searchEmployees(String theSearchName);
 	
 }

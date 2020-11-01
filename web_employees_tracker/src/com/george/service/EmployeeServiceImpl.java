@@ -49,4 +49,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 	}
 
+
+	@Override
+	@Transactional
+	public List<Employee> searchEmployees(String theSearchName) {
+		
+		return employeeDAO.searchEmployees(theSearchName);
+	}
+
 }

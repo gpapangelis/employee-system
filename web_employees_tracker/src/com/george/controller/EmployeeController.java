@@ -106,5 +106,21 @@ public class EmployeeController {
 		
 	}
 	
+	@GetMapping("/search")
+	public String searchEmployees(@RequestParam("theSearchName") String theSearchName,
+				Model theModel) { 
+		
+		//search employees from the service
+		List<Employee> theEmployees = employeeService.searchEmployees(theSearchName);
+		
+		//add the employees to the model
+		theModel.addAttribute("employees", theEmployees);
+		
+		return "list-employees";
+		
+		
+		
 	
+	
+	}
 }

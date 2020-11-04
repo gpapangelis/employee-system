@@ -90,4 +90,19 @@ public class DepartmentController {
 		
 	}
 	
+	@GetMapping("/searchByDep")
+    public String searchDepartments(@RequestParam("theDepartmentName") String theDepartmentName,
+                                    Model theModel) {
+
+        // search customers from the service
+        List<Department> theDepartments = departmentService.searchDepartments(theDepartmentName);
+                
+        // add the customers to the model
+        theModel.addAttribute("departments", theDepartments);
+
+        return "list-departments";        
+    }
+
+
+	
 }

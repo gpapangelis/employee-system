@@ -8,7 +8,7 @@ public interface EmployeeDAO {
 
 	public List<Employee> getEmployees();
 
-	public List<Employee> getEmployeesByDep(int deptid);
+	public List<Employee> getEmployeesByDep(int dep);
 
 	public void saveEmployee(Employee theEmployee);
 
@@ -17,5 +17,8 @@ public interface EmployeeDAO {
 	public void deleteEmployee(int theId);
 
 	public List<Employee> searchEmployees(String theSearchName);
+
+	
+	
 	
 }

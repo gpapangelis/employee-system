@@ -13,4 +13,6 @@ public interface DepartmentService {
 	public Department getDepartment(int theId);
 
 	public void deleteDepartment(int theId);
+	
+	public List<Department> searchDepartments(String theDepartmentName);
 }

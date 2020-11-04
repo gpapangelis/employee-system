@@ -49,5 +49,12 @@ public class DepartmentServiceImpl implements DepartmentService {
 		departmentDAO.deleteDepartment(theId);
 		
 	}
+	
+	@Override
+    @Transactional
+    public List<Department> searchDepartments(String theDepartmentName) {
+
+        return departmentDAO.searchDepartments(theDepartmentName);
+    }
 
 }

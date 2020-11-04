@@ -40,25 +40,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		
 	}
 
-	@Override
-	public List<Employee> getEmployeesByDep(int deptid) {
-		
-		//get the current hibernate session
-		Session currentSession = sessionFactory.getCurrentSession(); 
-				
-		//create a query
-		Query<Employee> theQuery = 
-						currentSession.createQuery("from Employee WHERE deptid = 1", Employee.class);
-		
-				
-		//execute query and get result list
-		List<Employee> employees = theQuery.getResultList();
-				
-				
-		//return the results
-		return employees;
-		
-	}
+	
 
 	@Override
 	public void saveEmployee(Employee theEmployee) {
@@ -126,5 +108,32 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				return employees;
 		
 	}
+	
+	@Override
+	public List<Employee> getEmployeesByDep(int dep) {
+		
+		//get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		
+		Query theQuery = null;
+		//create a query ... sort by last name
+		
+		/*Query<Employee> theQuery = currentSession.createQuery("from Employee WHERE deptid = :d order by lastName" , 
+															Employee.class); */
+		
+		theQuery =currentSession.createQuery("from Employee WHERE deptid = :d ", Employee.class);
+		
+		theQuery.setParameter("d", dep);
+			
+		//execute query and get result list
+		List<Employee> employees = theQuery.getResultList();
+		
+		//return the results
+		return employees;
+	}
+
+		
+	
 
 }

@@ -15,4 +15,11 @@ public interface EmployeeService {
 	public void deleteEmployee(int theId);
 
 	public List<Employee> searchEmployees(String theSearchName);
+
+
+
+	public List<Employee> getEmployeesByDep(int dep);
+
+	
+	
 }

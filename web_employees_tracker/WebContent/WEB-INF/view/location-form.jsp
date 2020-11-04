@@ -35,6 +35,10 @@
 				<table>
 					<tbody>
 						<tr>
+							<td><label>Location ID :</label></td>
+							<td><form:input path="locid" /></td>
+						</tr>
+						<tr>
 							<td><label>Location Name :</label></td>
 							<td><form:input path="locname" /></td>
 						</tr>

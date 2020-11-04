@@ -75,6 +75,12 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		
 	}
 
+	@Override
+	public List<Department> searchDepartments(String theDepartmentName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	//add for search by deptid   (prosoxh sto id)
 	/*@Override
 	public List<Employee> getEmployeesByDep(int deptid) {
@@ -95,5 +101,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		return employees;
 		
 	}    */
+	
+	
 
 }

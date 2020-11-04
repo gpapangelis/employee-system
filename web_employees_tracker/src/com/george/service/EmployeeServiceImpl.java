@@ -24,6 +24,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDAO.getEmployees();
 	}
 
+	
+	
 
 	@Override
 	@Transactional
@@ -57,4 +59,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDAO.searchEmployees(theSearchName);
 	}
 
+
+	@Override
+	@Transactional
+	public List<Employee> getEmployeesByDep(int dep) {
+		return employeeDAO.getEmployeesByDep(dep);
+	}
+	
+	
+	
+	
+
+
+	
+
+
+	
+
+
+	
 }

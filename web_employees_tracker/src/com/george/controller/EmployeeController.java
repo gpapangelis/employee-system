@@ -117,10 +117,25 @@ public class EmployeeController {
 		theModel.addAttribute("employees", theEmployees);
 		
 		return "list-employees";
-		
-		
-		
+	
 	
 	
 	}
+	
+	@GetMapping("/listByDep/{dep}")
+	public String listEmployeesByDep(Model theModel, @PathVariable("dep") int dep) {
+		
+		// get student from the service
+		List<Employee> theEmployees = employeeService.getEmployeesByDep(dep);
+		
+		
+		//add the students to the model
+		theModel.addAttribute("employees" , theEmployees);
+				
+		return "list-employees";
+		
+	}
+	
+	
+	
 }

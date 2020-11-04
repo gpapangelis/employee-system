@@ -45,6 +45,17 @@
 				<input type="submit" value="Search" class="add-button" />
 				</form:form>
 			
+			<!-- 
+			
+			<form:form action="searchDep" method="GET">
+				Search employee by Department: <input type="text" name="theDepartmentName" />
+				
+				<input type="submit" value="Search" class="add-button" />
+				</form:form>
+			
+			 -->
+
+			
 			
 			<!-- add html table here -->
 		
@@ -84,8 +95,10 @@
 						<td> ${tempEmployee.mngid} </td>
 						<td> ${tempEmployee.hiredate} </td>
 						<td> ${tempEmployee.salary} </td>
-						<td> ${tempEmployee.comm} </td>
-						<td> ${tempEmployee.deptid} </td>
+						<td> ${tempEmployee.comm} </td>	
+						<td> <a href="listByDep/${tempEmployee.deptid}">${tempEmployee.deptid}</a></td>
+						
+						
 						
 						<td>
 							<!-- display the update link -->

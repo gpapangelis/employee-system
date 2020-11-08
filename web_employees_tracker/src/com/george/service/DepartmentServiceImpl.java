@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.george.dao.DepartmentDAO;
 import com.george.entity.Department;
+import com.george.entity.Employee;
 import com.george.entity.Location;
 
 @Service
@@ -57,4 +58,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentDAO.searchDepartments(theDepartmentName);
     }
 
+	
+	@Override
+	@Transactional
+	public List<Department> getDepartmentsByLoc(int loc) {
+		return departmentDAO.getDepartmentsByLoc(loc);
+	}
 }

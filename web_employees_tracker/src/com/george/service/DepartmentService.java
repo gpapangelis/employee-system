@@ -3,6 +3,7 @@ package com.george.service;
 import java.util.List;
 
 import com.george.entity.Department;
+import com.george.entity.Employee;
 
 public interface DepartmentService {
 
@@ -15,4 +16,8 @@ public interface DepartmentService {
 	public void deleteDepartment(int theId);
 	
 	public List<Department> searchDepartments(String theDepartmentName);
+	
+	
+	
+	public List<Department> getDepartmentsByLoc(int loc);
 }

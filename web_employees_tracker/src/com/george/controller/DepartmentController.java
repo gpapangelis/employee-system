@@ -104,5 +104,18 @@ public class DepartmentController {
     }
 
 
+	@GetMapping("/listByLoc/{loc}")
+	public String listDepartmentssByLoc(Model theModel, @PathVariable("loc") int loc) {
+		
+		// get student from the service
+		List<Department> theDepartments = departmentService.getDepartmentsByLoc(loc);
+		
+		
+		//add the students to the model
+		theModel.addAttribute("departments" , theDepartments);
+				
+		return "list-departments";
+		
+	}
 	
 }

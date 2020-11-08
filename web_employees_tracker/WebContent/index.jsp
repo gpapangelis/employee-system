@@ -6,7 +6,6 @@
 <c:url value="employee/list" var="employeeUrl"/>
 <c:url value="department/list" var="departmentUrl"/>
 <c:url value="location/list" var="locationUrl"/>
-<c:url value="employee/listByDep" var="locationUrl"/>
 
 
 <head>
@@ -50,7 +49,7 @@
 						
 						  									
 								
-															
+								<li class="list-group-item">							
 								
 								<div class="dropdown">
   								<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Employees by Department
@@ -62,7 +61,9 @@
   									</ul>
 								</div>
 								
+								</li>
 								
+								<li class="list-group-item">
 								
 								<div class="dropdown">
   								<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Departments by Location
@@ -76,12 +77,16 @@
   									</ul>
 								</div>
 								
+								</li>
+								
 								<li class="list-group-item "><a href="${employeeUrl}">Employee's List</a></li>
+								
+								
 								
 								
 						</ul>
 				
-    
+    	
 	
 		
 	</div>
